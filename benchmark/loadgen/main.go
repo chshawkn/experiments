@@ -33,6 +33,7 @@ func makeConnection() (net.Conn, error) {
 		if err != nil {
 			return nil, err
 		}
+		//return dialer.Dial("tcp4", fmt.Sprintf("receiver.local:%d", *fRemotePort))
 		return dialer.Dial("tcp4", fmt.Sprintf("127.0.0.1:%d", *fRemotePort))
 	default:
 		return nil, errors.New("Unknown proxy type: " + *fType)
